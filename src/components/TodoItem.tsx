@@ -7,18 +7,28 @@ const TodoItemComponent: React.FC<TodoItemProps> = ({
   onRemove,
 }) => {
   return (
-    <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+    <li
+      title={todo.text}
+      className={`todo-item ${todo.completed ? "completed" : ""}`}
+    >
       <span
         style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-        title={todo.text}
       >
         {todo.text}
       </span>
       <div>
-        <button onClick={onToggleComplete} style={{ marginLeft: "10px" }}>
+        <button
+          className="complete"
+          onClick={onToggleComplete}
+          style={{ marginLeft: "10px" }}
+        >
           {todo.completed ? "Undo" : "Complete"}
         </button>
-        <button onClick={onRemove} style={{ marginLeft: "10px" }}>
+        <button
+          className="remove"
+          onClick={onRemove}
+          style={{ marginLeft: "10px" }}
+        >
           Remove
         </button>
       </div>
