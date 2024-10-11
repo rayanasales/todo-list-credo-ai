@@ -1,6 +1,11 @@
 import React from "react";
+import { TodoItemProps } from "../types/TodoItemProps";
 
-function TodoItem({ todo, onToggleComplete, onRemove }) {
+const TodoItemComponent: React.FC<TodoItemProps> = ({
+  todo,
+  onToggleComplete,
+  onRemove,
+}) => {
   return (
     <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
       <span
@@ -19,6 +24,6 @@ function TodoItem({ todo, onToggleComplete, onRemove }) {
       </div>
     </li>
   );
-}
+};
 
-export default TodoItem;
+export default TodoItemComponent;
